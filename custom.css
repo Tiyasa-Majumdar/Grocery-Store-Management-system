@@ -2312,8 +2312,8 @@ button.close:focus {
 }
 
 .sidebar-nav li {
-    line-height: 40px;
-    text-indent: 20px;
+    /*line-height: 40px;*/
+    /*text-indent: 20px;*/
 }
 
 .sidebar-nav li a {
@@ -2334,9 +2334,9 @@ button.close:focus {
 }
 
 .sidebar-nav > .sidebar-brand {
-    height: 65px;
-    line-height: 60px;
-    font-size: 18px;
+    /*height: 65px;*/
+    /*line-height: 60px;*/
+    /*font-size: 18px;*/
 }
 
 .sidebar-nav > .sidebar-brand a {
@@ -3754,7 +3754,7 @@ img {
 }
 
 #ticket_amount {
-    appearance: textfield;
+    -moz-appearance:textfield;
 }
 
 .ticket-detail-container .ticket-amount{
