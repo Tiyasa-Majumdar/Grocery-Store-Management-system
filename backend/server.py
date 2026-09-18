@@ -28,10 +28,14 @@ connection = get_sql_connection()
 
 @app.route('/getProducts', methods=['GET'])
 def get_products():
-    products = products_dao.get_all_products(connection)
-    response = jsonify(products)
-    response.headers.add('Access-Control-Allow-Origin', '*')
-    return response
+    try:
+        products = products_dao.get_all_products(connection)
+        return jsonify(products)
+    except Exception as e:
+        print("GET PRODUCTS ERROR:", repr(e))
+        return jsonify({
+            "error": str(e)
+        }), 500
 
 @app.route('/getUOM', methods=['GET'])
 def get_uom():
