@@ -10,15 +10,16 @@ def get_sql_connection():
                               autocommit=True) 
     return __cnx '''
 
-import os
 import mysql.connector
+import os
+
 
 def get_sql_connection():
     return mysql.connector.connect(
-        host=os.environ.get("grocery-mysql-grocery-management1.j.aivencloud.com"),
-        port=int(os.environ.get("DB_PORT", 17369)),
-        user=os.environ.get("avnadmin"),
-        password=os.environ.get("AVNS_51Jkk8UDs4_gutxZFMm"),
-        database=os.environ.get("defaultdb"),
+        host=os.environ.get("DB_HOST"),
+        port=int(os.environ.get("DB_PORT", 3306)),
+        user=os.environ.get("DB_USER"),
+        password=os.environ.get("DB_PASSWORD"),
+        database=os.environ.get("DB_NAME"),
         autocommit=True
     )
