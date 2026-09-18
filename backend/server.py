@@ -10,6 +10,11 @@ import os
 print("RUNNING SERVER FILE:", os.path.abspath(__file__))
 
 app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Grocery Management System Backend is running!"
+
 CORS(app, resources={
           r"/*": {"origins": "http://127.0.0.1:5500"}})
 
